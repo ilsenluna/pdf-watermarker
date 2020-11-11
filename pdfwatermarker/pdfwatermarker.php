@@ -130,21 +130,10 @@ class PDFWatermarker {
 																	$wHeight, 
 																	$templateDimension['w'], 
 																	$templateDimension['h']);
-							
 		if ( $watermark_visible ) {
-			if ( $this->_watermark->usedAsBackground() ) {															
-				$this->_tempPdf->Image($this->_watermark->getFilePath(),$watermarkCoords[0],$watermarkCoords[1],-96);
-				$this->_tempPdf->useTemplate($templateId);
-			}
-			else {
-				$this->_tempPdf->useTemplate($templateId);
-				$this->_tempPdf->Image($this->_watermark->getFilePath(),$watermarkCoords[0],$watermarkCoords[1],-96);
-			}
+			$this->_tempPdf->Image($this->_watermark->getFilePath(),$watermarkCoords[0],$watermarkCoords[1],-96);
 		}
-		else {
-			$this->_tempPdf->useTemplate($templateId);
-		}
-		
+		$this->_tempPdf->useTemplate($templateId);
 	}
 	
 	/**

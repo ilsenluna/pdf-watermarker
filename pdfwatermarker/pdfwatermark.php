@@ -67,6 +67,7 @@ class PDFWatermark {
 		return $path;
 		
 	}
+
 	
 	/**
 	 * Assess the watermark's dimensions
